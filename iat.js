@@ -1,6 +1,6 @@
 // User variables
 //---------------------------------------------------------------
-var TRIALS = 10; // number of trials
+var TRIALS = 20; // number of trials
 var left_array = ["L", "Left", "left", "LEFT"]; // word list 1
 var right_array = ["R", "Right", "right", "RIGHT"]; // word list 2
 //---------------------------------------------------------------
@@ -32,22 +32,24 @@ var left_list = left_array.slice(0);
 var right_list = right_array.slice(0);
 
 var data = []; // array to hold data
+var page = 0;
 
-function start(left, right){
+function start(left, right, cur_page){
 	left_array = left;
 	right_array = right;
+	page = cur_page;
+	
 	left_list = left_array.slice(0);
 	right_list = right_array.slice(0);
 	return iat;
 }
 
 function iat(){
-	console.log("left: " + left_list + " right: " + right_list);
 	var word_index; // initialize word index variable
 	counter++; // count the number of times iat has been called
 	
 	// pick a side at (semi) random
-	side = Math.round((Math.random() * 1)); // pick a side at random (left or right)
+	side = Math.round(Math.random()); // pick a side at random (left or right)
 	if(left_list.length == 0 && right_list.length > 0){ // if left list is empty
 		side = RIGHT; // choose right side
 	} else if(left_list.length > 0 && right_list.length == 0){ // if right list is empty
@@ -113,6 +115,7 @@ function evaluate(picked){
 		}
 	} else {
 		alert("data to be sent to server:\n" + JSON.stringify(data)); // show data
+		window.location="InstructP"+ (page + 1) + ".html";
 		// TODO: use JQUERY to send data to server-side php handler
 	}
 }
