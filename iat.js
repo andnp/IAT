@@ -5,7 +5,7 @@ var left_array = ["L", "Left", "left", "LEFT"]; // word list 1
 var right_array = ["R", "Right", "right", "RIGHT"]; // word list 2
 //---------------------------------------------------------------
 
-window.performance = window.performance || {};
+/* window.performance = window.performance || {};
 performance.now = (function() {
   return performance.now       ||
          performance.mozNow    ||
@@ -13,7 +13,7 @@ performance.now = (function() {
          performance.oNow      ||
          performance.webkitNow ||
          function() { return new Date().getTime(); };
-})();
+})(); */
 
 // Global constants
 var LEFT = 0;
@@ -101,7 +101,7 @@ window.onkeydown = function(e){
 
 function evaluate(picked){
 	reaction_time = Math.floor(performance.now() - start_time); // reaction time is current time - starting time
-	new_point = {acc:correct(picked), rt:reaction_time, word:word}; // make a data point object
+	var new_point = { acc:correct(picked), rt:reaction_time, word:word }; // make a data point object
 	data.push(new_point); // add that data point to the data list
 	clearScreen(); // clear the screen
 	waiting_for_input = 0; // clear the waiting for input flag
@@ -114,12 +114,32 @@ function evaluate(picked){
 			setTimeout(iat, randBetween(100, 700) + 300);
 		}
 	} else {
-		alert("data to be sent to server:\n" + JSON.stringify(data)); // show data
+		var json = { id:myIP(), phase:page, data:data };
+		var json_string = JSON.stringify( json );
+		alert("data to be sent to server:\n" + json_string); // show data
 		if(page + 1 < 6) window.location="InstructP"+ (page + 1) + ".html";
 		// TODO: use JQUERY to send data to server-side php handler
+		$.post('http://68.50.3.158/IAT/data.php', json);
 	}
 }
 
 function clearScreen(){
-	document.getElementById("word").innerHTML = ""; // clear the screen
+	document.getElementById("word").innerHTML = "</br>"; // clear the screen
+}
+
+function myIP() {
+    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+    xmlhttp.send();
+
+    hostipInfo = xmlhttp.responseText.split("\n");
+
+    for (i=0; hostipInfo.length >= i; i++) {
+        ipAddress = hostipInfo[i].split(":");
+        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+    }
+
+    return false;
 }
