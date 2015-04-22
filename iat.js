@@ -5,6 +5,16 @@ var left_array = ["L", "Left", "left", "LEFT"]; // word list 1
 var right_array = ["R", "Right", "right", "RIGHT"]; // word list 2
 //---------------------------------------------------------------
 
+window.performance = window.performance || {};
+performance.now = (function() {
+  return performance.now       ||
+         performance.mozNow    ||
+         performance.msNow     ||
+         performance.oNow      ||
+         performance.webkitNow ||
+         function() { return new Date().getTime(); };
+})();
+
 // Global constants
 var LEFT = 0;
 var RIGHT = 1;
@@ -22,7 +32,17 @@ var left_list = left_array.slice(0);
 var right_list = right_array.slice(0);
 
 var data = []; // array to hold data
+
+function start(left, right){
+	left_array = left;
+	right_array = right;
+	left_list = left_array.slice(0);
+	right_list = right_array.slice(0);
+	return iat;
+}
+
 function iat(){
+	console.log("left: " + left_list + " right: " + right_list);
 	var word_index; // initialize word index variable
 	counter++; // count the number of times iat has been called
 	
@@ -48,7 +68,7 @@ function iat(){
 		right_list.splice(word_index, 1); 
 	}
 	waiting_for_input = 1; // set waiting for input flag
-	start_time = Date.now(); // get the time this iteration started
+	start_time = performance.now(); // get the time this iteration started
 	document.getElementById("word").innerHTML = word; // display the word on screen.
 }
 
@@ -78,7 +98,7 @@ window.onkeydown = function(e){
 }
 
 function evaluate(picked){
-	reaction_time = Date.now() - start_time; // reaction time is current time - starting time
+	reaction_time = Math.floor(performance.now() - start_time); // reaction time is current time - starting time
 	new_point = {acc:correct(picked), rt:reaction_time, word:word}; // make a data point object
 	data.push(new_point); // add that data point to the data list
 	clearScreen(); // clear the screen
