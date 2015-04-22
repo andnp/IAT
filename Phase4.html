@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+<head style="height:100%;">
+ <title>IAT</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ <script src="iat.js"></script>
+</head>
+<body style="height:100%;">
+ <div class="row" style="height:40%;font-size:200%;text-align:center;">
+  <div class="col-xs-4" style="height:100%">Extraverted</div>
+  <div class="col-xs-4" style="height:100%;"></div>
+  <div class="col-xs-4" style="height:100%">Introverted</div>
+ </div>
+ <div class="row" style="height:50%;font-size:200%;text-align:center;">
+  <div class="col-xs-4" style="height:100%"></div>
+  <div class="col-xs-4" style="height:100%;">
+   <span id="word" style="top:50%;"></span>
+  </div>
+  <div class="col-xs-4" style="height:100%"></div>
+ </div>
+ <script>
+ right = ["Introspective", "Reclusive", "Soft Spoken", "Quiet", "Shy", "Withdrawn", "Bashful", "Solitary"]; //introverted
+ left = ["Outgoing", "Personable", "Sociable", "Friendly", "Unreserved", "Open", "Communicative", "Talkative"]; //extraverted
+ 
+ setTimeout(start(left, right, 4), 1500);</script>
+</body>
+</html>

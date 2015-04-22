@@ -49,7 +49,7 @@ function iat(){
 	counter++; // count the number of times iat has been called
 	
 	// pick a side at (semi) random
-	side = Math.round(Math.random()); // pick a side at random (left or right)
+	side = randBetween(0,2); // pick a side at random (left or right)
 	if(left_list.length == 0 && right_list.length > 0){ // if left list is empty
 		side = RIGHT; // choose right side
 	} else if(left_list.length > 0 && right_list.length == 0){ // if right list is empty
@@ -115,7 +115,7 @@ function evaluate(picked){
 		}
 	} else {
 		alert("data to be sent to server:\n" + JSON.stringify(data)); // show data
-		window.location="InstructP"+ (page + 1) + ".html";
+		if(page + 1 < 6) window.location="InstructP"+ (page + 1) + ".html";
 		// TODO: use JQUERY to send data to server-side php handler
 	}
 }
