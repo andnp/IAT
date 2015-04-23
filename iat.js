@@ -119,7 +119,7 @@ function evaluate(picked){
 		alert("data to be sent to server:\n" + json_string); // show data
 		if(page + 1 < 6) window.location="InstructP"+ (page + 1) + ".html";
 		// TODO: use JQUERY to send data to server-side php handler
-		$.post('http://68.50.3.158/IAT/data.php', json);
+		$.post('http://68.50.3.158/IAT/data.php', json_string);
 	}
 }
 
