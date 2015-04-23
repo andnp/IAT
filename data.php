@@ -1,24 +1,14 @@
 <?php
 $data = file_get_contents("php://input");
-$arrays = json_decode($data, true);
+$json = json_decode($data, true);
 $f = fopen('data.csv', 'w');
 
-$firstLineKeys = false;
-foreach ($arrays as $line)
-{
-    if (empty($firstLineKeys))
-    {
-        $firstLineKeys = array_keys($line);
-        fputcsv($f, $firstLineKeys);
-        $firstLineKeys = array_flip($firstLineKeys);
-    }
-    $line_array = array($line['id']);
-    $line_array.push($line['phase']);
-	    foreach ($line['data'] as $value)
-    {
-        $line_array.push($value);
-    }
-    fputcsv($f, $line_array);
-
+$line_array = [];
+array_push($line_array, $json->id);
+array_push($line_array, $json->phase);
+foreach($json->data as $value){
+	array_push($line_array, $value);
 }
+fputcsv($f, $line_array);
+fclose($f);
 ?>
