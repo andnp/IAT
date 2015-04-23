@@ -1,7 +1,7 @@
 <?php
 $data = file_get_contents("php://input");
 $json = json_decode($data, true);
-$f = fopen('data.csv', 'w');
+$f = fopen('data.csv', 'a');
 
 fputcsv($f, $json->id);
 fputcsv($f, $json->phase);
