@@ -9,6 +9,7 @@ array_push($line_array, $json->phase);
 foreach($json->data as $value){
 	array_push($line_array, $value);
 }
+print_r($line_array);
 fputcsv($f, $line_array);
 fclose($f);
 
