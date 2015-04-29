@@ -107,11 +107,11 @@ function evaluate(picked){
 	waiting_for_input = 0; // clear the waiting for input flag
 	if(counter < TRIALS){ // check if we have completed correct number of trials
 		if(correct(picked)){
-			setTimeout(iat, randBetween(100, 700)); // call iat function in .75 to 2 seconds
+			setTimeout(iat, 700); // call iat function in .7 seconds
 		} else {
 			document.getElementById("word").innerHTML = "Incorrect";
 			setTimeout(clearScreen, 300);
-			setTimeout(iat, randBetween(100, 700) + 300);
+			setTimeout(iat, 700 + 300);
 		}
 	} else {
 		var json = { id:myIP(), phase:page, data:data };
