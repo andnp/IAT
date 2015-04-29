@@ -116,15 +116,8 @@ function evaluate(picked){
 	} else {
 		var json = { id:myIP(), phase:page, data:data };
 		var json_string = JSON.stringify( json );
-		alert("data to be sent to server:\n" + json_string); // show data
-		if(page + 1 < 6) window.location="InstructP"+ (page + 1) + ".html";
-		// TODO: use JQUERY to send data to server-side php handler
-		var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-		xmlhttp.open("POST", "http://68.50.3.158/IAT/data.php");
-		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-		xmlhttp.send(json_string);
-
-		alert(xmlhttp.responseText);
+		//alert("data to be sent to server:\n" + json_string); // show data
+		$.post('http://68.50.3.158/IAT/data.php', json_string);
 	}
 }
 
