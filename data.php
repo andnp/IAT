@@ -10,8 +10,8 @@ foreach($json["data"] as $value){
 	array_push($line_array, $val);
   }
 }
-//print_r($line_array);
-//print_r(error_get_last());
+echo($line_array);
+echo(error_get_last());
 fputcsv($f, $line_array);
 fclose($f);
 ?>
