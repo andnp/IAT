@@ -119,18 +119,12 @@ function evaluate(picked){
 		alert("data to be sent to server:\n" + json_string); // show data
 		if(page + 1 < 6) window.location="InstructP"+ (page + 1) + ".html";
 		// TODO: use JQUERY to send data to server-side php handler
-<<<<<<< HEAD
-		//$.post('http://68.50.3.158/IAT/data.php', json_string, function(data) { alert(data); } );
-=======
->>>>>>> 370c5da7c8a30284172f4ff0d9014f69329de852
 		var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 		xmlhttp.open("POST", "http://68.50.3.158/IAT/data.php");
 		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xmlhttp.send(json_string);
-<<<<<<< HEAD
-=======
+
 		alert(xmlhttp.responseText);
->>>>>>> 370c5da7c8a30284172f4ff0d9014f69329de852
 	}
 }
 
