@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 var app = express();
 
 app.use( bodyParser.json() );
@@ -20,6 +21,14 @@ app.get('/', function(req, res, next) {
 
 app.post('/', function(req, res, next) {
     res.send('Thanks');
+    var ip = req.ip;
+    var data = req.body;
+//    data.ip = ip;
+    
+    fs.appendFile('data/data'+data.phase+'.json', data, function(err) {
+	console.log(err);
+    });
+
     console.log(req.ip);
     console.log(req.body);
     console.log('POST');

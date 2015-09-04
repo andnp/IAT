@@ -115,9 +115,8 @@ function evaluate(picked){
 		}
 	} else {
 		var json = { phase:page, data:data };
-		var json_string = JSON.stringify( json );
 		//alert("data to be sent to server:\n" + json_string); // show data
-		$.post('http://silo.soic.indiana.edu:11100/', json_string);
+		$.post('http://silo.soic.indiana.edu:11100/', json);
 	}
 }
 
