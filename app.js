@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var moment = require('moment');
 var app = express();
 
 app.use( bodyParser.json() );
@@ -23,10 +24,13 @@ app.post('/', function(req, res, next) {
     res.send('Thanks');
     var ip = req.ip;
     var data = req.body;
-//    data.ip = ip;
+    data.ip = ip;
+    data.time = moment().format('YYYY-MM-DD HH:mm:ss Z');
+
+    var data_string = JSON.stringify(data) + "\n";
     
-    fs.appendFile('data/data'+data.phase+'.json', data, function(err) {
-	console.log(err);
+    fs.appendFile('data/data'+data.phase+'.json', data_string, function(err) {
+	if(err !== null) console.log(err);
     });
 
     console.log(req.ip);
