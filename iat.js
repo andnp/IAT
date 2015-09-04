@@ -114,7 +114,7 @@ function evaluate(picked){
 			setTimeout(iat, 700 + 300);
 		}
 	} else {
-		var json = { id:myIP(), phase:page, data:data };
+		var json = { phase:page, data:data };
 		var json_string = JSON.stringify( json );
 		//alert("data to be sent to server:\n" + json_string); // show data
 		$.post('http://silo.soic.indiana.edu:11100/', json_string);
