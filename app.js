@@ -7,13 +7,20 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/', function(req, res) {
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/', function(req, res, next) {
     res.send('Hey there');
     console.log('GET');
 });
 
-app.post('/', function(req, res) {
+app.post('/', function(req, res, next) {
     res.send('Thanks');
+    console.log(req.ip);
     console.log(req.body);
     console.log('POST');
 });
