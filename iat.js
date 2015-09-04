@@ -117,7 +117,7 @@ function evaluate(picked){
 		var json = { id:myIP(), phase:page, data:data };
 		var json_string = JSON.stringify( json );
 		//alert("data to be sent to server:\n" + json_string); // show data
-		$.post('http://68.54.130.60/', json_string);
+		$.post('http://silo.soic.indiana.edu:11100/', json_string);
 	}
 }
 
