@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "description": "app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "moment": "^2.10.6"
+  }
+}
