@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var moment = require('moment');
+var sys = require('sys');
+var exec = require('child_process').exec;
 var app = express();
 
 app.use( bodyParser.json() );
@@ -32,6 +34,15 @@ app.post('/', function(req, res, next) {
     fs.appendFile('data/data'+data.phase+'.json', data_string, function(err) {
 	if(err !== null) console.log(err);
     });
+    
+    if(data.phase == 5) {
+	console.log('running git script');
+	exec('./gitscript.sh', function(error, stdout, stderr){
+	    sys.print('stdout: ' + stdout);
+	    sys.print('stderr: ' + stderr);
+	    if(error){ console.log('exec error: ' + error); }
+	});
+    }
 
     console.log(req.ip);
     console.log(req.body);
