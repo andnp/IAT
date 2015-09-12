@@ -10,12 +10,17 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 app.get('/', function(req, res, next) {
+
+    fs.readFile('data/data1.json', function(err,data){
+
+    });
+
     res.send('Hey there');
     console.log('GET');
 });
@@ -27,10 +32,13 @@ app.post('/', function(req, res, next) {
     data.ip = ip;
     data.time = moment().format('YYYY-MM-DD HH:mm:ss Z');
 
-    var data_string = JSON.stringify(data) + "\n";
-    
-    fs.appendFile('data/data'+data.phase+'.json', data_string, function(err) {
-	if(err !== null) console.log(err);
+    fs.readFile('data/data'+data.phase+'.json', function(err, file){
+        var json = JSON.parse(file);
+        console.log(json);
+        json.push(data);
+        fs.writeFile('data/data'+data.phase+'.json', JSON.stringify(json),function(err){
+            if(err) console.log(err);
+        });
     });
 
     console.log(req.ip);
