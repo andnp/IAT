@@ -1,0 +1,13 @@
+introspective	outgoing
+quiet			sociable
+shy				talkative
+reserved		communicative
+soft spoken		energetic
+introvert		extrovert
+
+intelligent		unintelligent
+smart			stupid
+brilliant		dumb
+bright			ignorant
+genius			idiotic
+wise            fool
