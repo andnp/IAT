@@ -80,20 +80,35 @@ emitter.once('combineData',function(){
 			var meandif = mean5 - mean3;
 
 			var squaredif = 0;
-			var length = Math.max(data3.length, data5.length);
-			for(var i = 0; i < length; i++){
-				if(data3[i] && data5[i]){
-					squaredif += Math.pow(meandif + (parseInt(data3[i].rt) - parseInt(data5[i].rt)), 2);
-				} else if(!data3[i]){
-					squaredif += Math.pow(meandif + (mean3 - parseInt(data5[i].rt)), 2);
-				} else if(!data5[i]){
-					squaredif += Math.pow(meandif + (parseInt(data3[i].rt) - mean5), 2);
-				}
+			var combdata = data3.concat(data5);
+			var combmean = 0;
+
+			for(var i = 0; i < combdata.length; i++){
+				combmean += parseInt(combdata[i].rt)
+			}
+			combmean = combmean / combdata.length;
+
+			for(var i = 0; i < combdata.length; i++){
+				squaredif += Math.pow(combmean - parseInt(combdata[i].rt), 2);
 			}
 
-			incsd = Math.sqrt(squaredif / (length - 1));
+			incsd = Math.sqrt(squaredif / (combdata.length - 1));
 			//D = difference score / inclusive SD
 			var D = meandif / incsd;
+
+			//Calculate mean response time among all 5 trials
+			var meanResponse = 0;
+			var totalLength = 0;
+			for(var i = 0; i < subject.length; i++){
+				var data = subject[i].data;
+				for(var j = 0; j < data.length; j++){
+					meanResponse += parseInt(data[j].rt);
+					totalLength++;
+				}
+			}
+			meanResponse = meanResponse / totalLength;
+
+			aggData.meanResponse = meanResponse;
 			aggData.meanDif = meandif;
 			aggData.SD = incsd;
 			aggData.D = D;
