@@ -35,6 +35,20 @@ emitter.once('combineData',function(){
 				}
 			}
 		}
+		//Add 600ms to scores with error
+		for(var i = 0; i < subject.length; i++){
+			var data = subject[i].data;
+			var newData = [];
+			for(var j = 0; j < data.length; j++){
+				if(data[j].acc == 0){
+					data[j].rt = parseInt(data[j].rt) + 600;
+					newData.push(data[j]);
+				} else {
+					newData.push(data[j]);
+				}
+			}
+			subject[i].data = newData;
+		}
 		if((speedCount / dataCount) < .1){
 			//Compute mean latency for responses in 3,5
 			//Compute the inclusive standard deviation for all trials in stage 3 and 5
