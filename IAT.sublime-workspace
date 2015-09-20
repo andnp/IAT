@@ -3,6 +3,7 @@
 	{
 		"selected_items":
 		[
+<<<<<<< HEAD
 			[
 				"isP",
 				"isPreviewMode	(ScriptEditorToolbar.js)"
@@ -31,6 +32,8 @@
 				"varia",
 				"variables"
 			]
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 		]
 	},
 	"buffers":
@@ -39,6 +42,7 @@
 			"file": "app.js",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 1730,
 				"line_ending": "Unix"
 			}
@@ -56,6 +60,9 @@
 			"settings":
 			{
 				"buffer_size": 4958,
+=======
+				"buffer_size": 1703,
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 				"line_ending": "Unix"
 			}
 		}
@@ -67,6 +74,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
+<<<<<<< HEAD
 		"height": 127.0,
 		"last_filter": "package insta",
 		"selected_items":
@@ -76,10 +84,18 @@
 				"Package Control: Install Package"
 			],
 			[
+=======
+		"height": 138.0,
+		"last_filter": "git push",
+		"selected_items":
+		[
+			[
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 				"git push",
 				"Git: Push"
 			],
 			[
+<<<<<<< HEAD
 				"git commit",
 				"Git: Commit"
 			],
@@ -104,10 +120,13 @@
 				"Git: Change Branch"
 			],
 			[
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 				"git comm",
 				"Git: Commit"
 			],
 			[
+<<<<<<< HEAD
 				"git pull",
 				"Git: Pull"
 			],
@@ -205,6 +224,25 @@
 		[
 			"install",
 			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+=======
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"ls"
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 		]
 	},
 	"distraction_free":
@@ -218,6 +256,7 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/Users/andy.patterson/Projects/IAT",
 		"/Users/andy.patterson/Projects/IAT/data"
 	],
@@ -322,6 +361,37 @@
 			"/Users/andy.patterson/Projects/pure-cloud-browser-app/src/templates",
 			"<project>",
 			"/Users/andy.patterson/Projects/pure-cloud-browser-app/src/js"
+=======
+		"/home/andy/Projects/IAT",
+		"/home/andy/Projects/IAT/data"
+	],
+	"file_history":
+	[
+		"/home/andy/Projects/IAT/data/data5.json",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/apps/consume.c",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/apps/produce.c",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/shell/xsh_prodcons.c",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/include/shprototypes.h",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/shell/shell.c",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/shell/xsh_hello.c",
+		"/home/andy/Projects/OS-Fall-2015/bbb-xinu/include/prodcons.h",
+		"/home/andy/Projects/OS-Fall-2015/.gitignore",
+		"/home/andy/Projects/IAT/app.js",
+		"/home/andy/Projects/IAT/data/data2.json",
+		"/home/andy/Projects/IAT/data/data1.json",
+		"/home/andy/Projects/IAT/data/data3.json",
+		"/home/andy/Projects/IAT/data/data4.json"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 		]
 	},
 	"find_state":
@@ -329,6 +399,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
 			"variable",
 			" $",
 			"handleUpdate",
@@ -344,6 +415,8 @@
 			"tooltip",
 			" variables.sort(function(obj1, obj2){\n                var str1 = obj1.id, str2 = obj2.id;\n                if(str1.toLowerCase() === searchText){\n                    return -1;\n                } else if (str2.toLowerCase() === searchText){\n                    return 1;\n                } else {\n                    return 0;\n                }\n            });",
 			"([\n"
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -361,7 +434,11 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 1,
+=======
+			"selected": 0,
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 			"sheets":
 			[
 				{
@@ -370,19 +447,29 @@
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< HEAD
 						"buffer_size": 1730,
+=======
+						"buffer_size": 1703,
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								1167,
 								864
+=======
+								0,
+								0
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
 							"BracketHighlighterBusy": false,
 							"auto_complete": false,
 							"bh_regions":
@@ -444,11 +531,14 @@
 								"bh_tag_content"
 							],
 							"open_with_edit": true,
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+<<<<<<< HEAD
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -539,10 +629,14 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 717.0,
+=======
+						"translation.y": 510.0,
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
+<<<<<<< HEAD
 				},
 				{
 					"buffer": 2,
@@ -632,17 +726,27 @@
 					},
 					"stack_index": 2,
 					"type": "text"
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
+<<<<<<< HEAD
 		"height": 23.0
 	},
 	"input":
 	{
 		"height": 31.0
+=======
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 	},
 	"layout":
 	{
@@ -673,13 +777,21 @@
 	},
 	"output.git":
 	{
+<<<<<<< HEAD
 		"height": 100.0
+=======
+		"height": 112.0
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 	},
 	"pinned_build_system": "",
 	"project": "IAT.sublime-project",
 	"replace":
 	{
+<<<<<<< HEAD
 		"height": 42.0
+=======
+		"height": 0.0
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -688,6 +800,7 @@
 		"last_filter": "",
 		"selected_items":
 		[
+<<<<<<< HEAD
 			[
 				"componentdef",
 				"templates/appMain/privilegedMain/composer/scripter/componentDefault.html"
@@ -812,6 +925,8 @@
 				"scriptpagee",
 				"js/bindingHandlers/composer/scriptPageEventHandler.js"
 			]
+=======
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 		],
 		"width": 0.0
 	},
@@ -823,7 +938,11 @@
 		[
 			[
 				"",
+<<<<<<< HEAD
 				"~/Projects/webchat-js/webchat.sublime-project"
+=======
+				"~/Projects/IAT/IAT.sublime-workspace"
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 			]
 		],
 		"width": 380.0
@@ -845,7 +964,11 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
+<<<<<<< HEAD
 	"side_bar_width": 202.0,
+=======
+	"side_bar_width": 150.0,
+>>>>>>> d8bcdd26a3674e5632d0a65cda58b5d50d3e8881
 	"status_bar_visible": true,
 	"template_settings":
 	{
