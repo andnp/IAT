@@ -1,0 +1,26 @@
+-Hypothesis
+	-Participants will more easily associate extroverts with intelligence
+		-Supported 9/20/15 with d=-.70
+		-Supported 4/12/16 with corr=-.49 and p=.0000167
+	-Implicit bias will be correlated with self-report preference for extroversion
+		-Not supported 4/12/16
+			-corr=-.2, but p=.101
+		-Inverse supported 4/12/16
+			-corr=.39, with p=.000908
+-Interesting correlations
+	-Subjects who considered themselves to be introverted followed the expected pattern of related traits
+		-Trait (correlation, p-value)
+			-Less talkative (s=.66, p=6.77e-10)
+			-More reserved (-.64, 1.676e-9)
+			-Less energetic (.54, 1.12e-6)
+			-Less enthusiastic (.6, 4.65e-8)
+			-More quiet (-.71, 5.25e-12)
+			-Less assertive (.35, 2.87e-3)
+			-More shy (-.55, 6.25e-7)
+			-Less sociable (.74, 4.23e-13)
+			-Prefered introverts (.51, 7.08e-6)
+			-Feel warmer towards introverts (-.27, .02)
+		-Interestingly, there was absolutely no correlation between introversion and explicit perceived intelligence
+
+-Questions that come up
+	-We saw incredibly strong/significant correlations with self-reported introversion and self-reported personality traits. Are we introducing a bias in the personality traits by first asking them to identify as intro/extroverted?

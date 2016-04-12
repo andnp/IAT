@@ -44,8 +44,9 @@ getCorrelationMatrix = function(df){
 }
 
 # Script
-df = removeColumns(dat, c("ID", "Token", "SubmitDate", "Language", "Start", "Finish", "IP", "RefUrl", "Agree", "unknown1", "unknown2", "Major", "MeanResp", "MeanDif", "SD", "Grade", "Age"))
+df = removeColumns(dat, c("ID", "Token", "SubmitDate", "Language", "Start", "Finish", "IP", "RefUrl", "Agree", "unknown1", "unknown2", "Major", "MeanResp", "MeanDif", "SD", "Grade", "Age", "Gender"))
 df = removeIncompleteRows(df)
-df = recodeGender(df)
+if("Gender" %in% names(df))
+  df = recodeGender(df)
 correlationMatrix = getCorrelationMatrix(df)
 stats = corr.test(df)
