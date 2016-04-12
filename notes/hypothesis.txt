@@ -1,0 +1,5 @@
+- Participants will more easily associate extroverts with intelligence.
+	- Supported as of 9/20 with d= -.70
+- Education majors will be more strongly biased than non-education majors.
+- Introverts will be less biased than extroverts.
+- Implicit bias will be correlated with self-reported preference for extroverts.

@@ -36,7 +36,7 @@ app.post('/', function(req, res, next) {
 
     fs.readFile('data/data'+data.phase+'.json', function(err, file){
         var json = JSON.parse(file);
-        console.log(json);
+        // console.log(json);
         json.push(data);
         fs.writeFile('data/data'+data.phase+'.json', JSON.stringify(json),function(err){
             if(err) console.log(err);
@@ -44,12 +44,12 @@ app.post('/', function(req, res, next) {
     });
     
     if(data.phase == 5) {
-	console.log('running git script');
-	exec('./gitscript.sh', function(error, stdout, stderr){
-	    sys.print('stdout: ' + stdout);
-	    sys.print('stderr: ' + stderr);
-	    if(error){ console.log('exec error: ' + error); }
-	});
+    	console.log('running git script');
+    	exec('./gitscript.sh', function(error, stdout, stderr){
+    	    sys.print('stdout: ' + stdout);
+    	    sys.print('stderr: ' + stderr);
+    	    if(error){ console.log('exec error: ' + error); }
+    	});
     }
 
     console.log(req.ip);

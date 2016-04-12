@@ -1,0 +1,7 @@
+Scoring algorithm:
+1) Delete trials greater than 10000 msec
+2) Delete subjects where 10% of responses are less than 300ms
+3) Calculate mean of stage 3 and stage 5
+4) Calculate the difference in the means (mean5 - mean3)
+5) Calculate the inclusive standard deviation sqrt((meandif - (mean5 - mean3))^2)
+6) D = (difference in means) / (inclusive standard deviations)

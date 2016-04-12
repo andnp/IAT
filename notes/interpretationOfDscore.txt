@@ -1,0 +1,4 @@
+- Possible ranges of D score (-2, 2)
+- Break points for 'slight' (.15), 'moderate' (.35), 'strong' (.65)
+	- Referenced in Greenwald, Nosek, & Banaji 2003
+	- Referenced in Nosek, Greenwald, & Banaji 2006
