@@ -4,9 +4,9 @@ var EventEmitter = require('events');
 var emitter = new EventEmitter();
 
 var files = [];
-var subjects = [];
+// var subjects = [];
 
-emitter.once('combineData',function(){
+emitter.once('combineData',function(subjects){
 	var output = [];
 	for(var subnum = 0; subnum < subjects.length; subnum++){
 		var subject = subjects[subnum];
@@ -117,12 +117,47 @@ emitter.once('combineData',function(){
 			output.push(aggData);
 		}
 	};
-	console.log(output);
+	console.log(JSON.stringify(output));
 });
 
+emitter.on('checkData', function(data){
+	var subjects = [];
+	for(var i = 0; i < data.length; i++){
+		var dataPoint = data[i];
+		if(dataPoint.length < 5){
+			// console.log("short");
+		} else if(dataPoint.length > 5){
+			// console.log("long")
+		} else {
+			subjects.push(dataPoint);
+		}
+		// console.log(dataPoint);
+	}
+	// console.log(subjects.length)
+	emitter.emit('combineData', subjects);
+
+})
+
+function getMax(arr){
+	var max = 0;
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i] > max)
+			max = arr[i];
+	}
+	return max;
+}
+
 emitter.on('readFile', function(inFile){
+	var subjects = [];
 	files.push(inFile);
 	if(files.length === 5){
+		var numParticipants = 0;
+		var temp = [];
+		for(var i = 0; i < files.length; i++){
+			temp.push(files[i].length);
+		}
+		numParticipants = getMax(temp);
+		// console.log(numParticipants)
 		// console.log(files);
 		files[0].forEach(function(subject){
 			var ip = subject.ip;
@@ -137,7 +172,10 @@ emitter.on('readFile', function(inFile){
 				});
 			};
 			subjects.push(subjectAll);
-			if(subjects.length === files[0].length) emitter.emit('combineData');
+			if(subjects.length === files[0].length){ 
+				// console.log(subjects);
+				emitter.emit('checkData', subjects);
+			}
 		});
 	}
 });
